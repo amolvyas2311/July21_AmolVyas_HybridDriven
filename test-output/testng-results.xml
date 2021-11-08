@@ -1,20 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="58305" started-at="2021-11-01T19:02:57 IST" finished-at="2021-11-01T19:03:56 IST">
+  <suite name="Default suite" duration-ms="294209" started-at="2021-11-08T16:42:59 IST" finished-at="2021-11-08T16:47:53 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="58305" started-at="2021-11-01T19:02:57 IST" finished-at="2021-11-01T19:03:56 IST">
+    <test name="Default test" duration-ms="294209" started-at="2021-11-08T16:42:59 IST" finished-at="2021-11-08T16:47:53 IST">
       <class name="com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1f554b06]" name="setUp" is-config="true" duration-ms="27930" started-at="2021-11-01T19:02:57 IST" finished-at="2021-11-01T19:03:25 IST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="setUp" is-config="true" duration-ms="17869" started-at="2021-11-08T16:43:00 IST" finished-at="2021-11-08T16:43:18 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyAddEmployeeTest()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1f554b06]" name="verifyAddEmployeeTest" duration-ms="30309" started-at="2021-11-01T19:03:25 IST" finished-at="2021-11-01T19:03:56 IST">
+        <test-method status="PASS" signature="verifyAddEmployeeDataDrivenTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="verifyAddEmployeeDataDrivenTest" duration-ms="59868" started-at="2021-11-08T16:43:18 IST" data-provider="ListOfEmp" finished-at="2021-11-08T16:44:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Maulik]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[M]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Kanani]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Australian Regional HQ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Learning]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Twilight]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[12.0]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Region-1]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[0.5]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sub unit-3]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAddEmployeeTest -->
+        </test-method> <!-- verifyAddEmployeeDataDrivenTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="teardown" is-config="true" duration-ms="358" started-at="2021-11-08T16:44:18 IST" finished-at="2021-11-08T16:44:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="setUp" is-config="true" duration-ms="14464" started-at="2021-11-08T16:44:18 IST" finished-at="2021-11-08T16:44:33 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAddEmployeeDataDrivenTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="verifyAddEmployeeDataDrivenTest" duration-ms="57926" started-at="2021-11-08T16:44:33 IST" data-provider="ListOfEmp" finished-at="2021-11-08T16:45:30 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[gauravK]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Kothadiya]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Australian Regional HQ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Cyclicing]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[General]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[11.0]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Region-3]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[0.75]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sub unit-3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddEmployeeDataDrivenTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="teardown" is-config="true" duration-ms="673" started-at="2021-11-08T16:45:30 IST" finished-at="2021-11-08T16:45:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="setUp" is-config="true" duration-ms="23431" started-at="2021-11-08T16:45:31 IST" finished-at="2021-11-08T16:45:55 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAddEmployeeDataDrivenTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="verifyAddEmployeeDataDrivenTest" duration-ms="51403" started-at="2021-11-08T16:45:55 IST" data-provider="ListOfEmp" finished-at="2021-11-08T16:46:46 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[VivekP]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[P]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Patil]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Australian Regional HQ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Reading]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Twilight]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[12.0]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Region-1]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1.0]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sub unit-3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddEmployeeDataDrivenTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="teardown" is-config="true" duration-ms="526" started-at="2021-11-08T16:46:46 IST" finished-at="2021-11-08T16:46:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="setUp" is-config="true" duration-ms="14755" started-at="2021-11-08T16:46:47 IST" finished-at="2021-11-08T16:47:01 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyAddEmployeeDataDrivenTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="verifyAddEmployeeDataDrivenTest" duration-ms="51683" started-at="2021-11-08T16:47:01 IST" data-provider="ListOfEmp" finished-at="2021-11-08T16:47:53 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[AmolV]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[V]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Vyas]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Australian Regional HQ]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Sleeping]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Default Shift]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[10.0]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Region-2]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1.0]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sub unit-1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAddEmployeeDataDrivenTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest@1877ab81]" name="teardown" is-config="true" duration-ms="450" started-at="2021-11-08T16:47:53 IST" finished-at="2021-11-08T16:47:53 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
       </class> <!-- com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
