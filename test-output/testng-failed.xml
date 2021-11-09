@@ -5,8 +5,9 @@
     <classes>
       <class name="com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest">
         <methods>
+          <include name="verifyAddEmployeeDataDrivenTest" invocation-numbers="3"/>
           <include name="setUp"/>
-          <include name="verifyAddEmployeeTest"/>
+          <include name="teardown"/>
         </methods>
       </class> <!-- com.technocredits.orghrm.testScripts.PIM_AddEmployeeTest -->
     </classes>

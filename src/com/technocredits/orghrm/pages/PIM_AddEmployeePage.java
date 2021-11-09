@@ -1,7 +1,10 @@
 package com.technocredits.orghrm.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,29 +13,44 @@ import com.technocredits.orghrm.base.PredefinedActions;
 
 public class PIM_AddEmployeePage extends PredefinedActions {
 
+	public String getEmployeeId() {
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//input[@id='employeeId']")));
+		WebElement employeeId =driver.findElement(By.xpath("//input[@id='employeeId']"));
+		return employeeId.getAttribute("value");
+	}
+
 	public PIM_AddEmployeePage setEmpFirstName(String fname) {
-		driver.findElement(By.xpath("//input[@id='first-name-box']")).sendKeys(fname);
+		sendkeysOnElement(getElement("XPATH", "//input[@id='first-name-box']", false), fname);
+		System.out.println("STEP- Enter value of First Name");
 		return this;
 	}
 
 	public PIM_AddEmployeePage setEmpMiddleName(String mname) {
-		driver.findElement(By.xpath("//input[@id='middle-name-box']")).sendKeys(mname);
+		sendkeysOnElement(getElement("XPATH", "//input[@id='middle-name-box']", false), mname);
+		System.out.println("STEP- Enter value of Middle Name");
 		return this;
 	}
 
 	public PIM_AddEmployeePage setEmpLastName(String lname) {
-		driver.findElement(By.xpath("//input[@id='last-name-box']")).sendKeys(lname);
+		sendkeysOnElement(getElement("XPATH", "//input[@id='last-name-box']", false), lname);
+		System.out.println("STEP- Enter value of Last Name");
 		return this;
 	}
 
 	public PIM_AddEmployeePage setEmployeeLocation(String location) {
 		driver.findElement(By.xpath("//i[text()='arrow_drop_down']")).click();
-		driver.findElement(By.xpath("//span[text()='" + location + "']//parent::a")).click();
+		driver.findElement(By.xpath("//span[text()='" + location +"']//parent::a")).click();
+		//clickOnElement(getElement("XPATH", "//i[text()='arrow_drop_down']", false));
+		//clickOnElement(getElement("XPATH", "//span[text()='" + location + "']//parent::a", false));
+		System.out.println("STEP- Select Value of Location");
 		return this;
 	}
 
 	public PIM_AddEmployeePage clickOnNext() {
+		//clickOnElement(getElement("XPATH", "//button[text()='Next']", false));
 		driver.findElement(By.xpath("//button[text()='Next']")).click();
+		System.out.println("STEP- Click on Next button");
 		return this;
 	}
 
@@ -41,47 +59,43 @@ public class PIM_AddEmployeePage extends PredefinedActions {
 		setEmpMiddleName(mname);
 		setEmpLastName(lname);
 		setEmployeeLocation(location);
-	}
+		}
 
 	public PIM_AddEmployeePage setHobbies(String hobbies) {
-		driver.findElement(By.xpath("//input[@id='5']")).sendKeys(hobbies);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement hobbiesElement = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='5']")));
+		hobbiesElement.sendKeys(hobbies);
+		//sendkeysOnElement(getElement("XPATH", "//input[@id='5']", true), hobbies);
+		System.out.println("STEP-Enter Hobbies");
 		return this;
 	}
 
 	public PIM_AddEmployeePage setWorkShift(String shiftValue) {
-		try {
-			driver.findElement(By
-					.xpath("//div[@id='work_shift_id_inputfileddiv']//span[@class='caret']//following-sibling::input"))
-					.click();
-		} catch (StaleElementReferenceException staleException) {
-			driver.findElement(By
-					.xpath("//div[@id='work_shift_id_inputfileddiv']//span[@class='caret']//following-sibling::input"))
-					.click();
-		}
-
-		// WebElement e = driver.findElement(
-		// By.xpath("//ul[contains(@class,'dropdown-content
-		// select-dropdown')]//span[text()='"+shiftValue+"']"));
-		/*
-		 * while(!e.isDisplayed()) { e = driver.findElement( By.
-		 * xpath("//ul[contains(@class,'dropdown-content select-dropdown')]//span[text()='"
-		 * +shiftValue+"']")); }
-		 */
-		WebDriverWait wait = new WebDriverWait(driver, 30); // 500 ms
-		// wait.until(ExpectedConditions.visibilityOf(e));
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement shiftValueElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
+				By.xpath("//div[@id='work_shift_id_inputfileddiv']//span[@class='caret']//following-sibling::input")));
+		shiftValueElement.click();
+		
 		WebElement e = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-				"//ul[contains(@class,'dropdown-content select-dropdown')]//span[text()='" + shiftValue + "']")));
+			"//ul[contains(@class,'dropdown-content select-dropdown')]//span[text()='" + shiftValue + "']")));
 		e.click();
+		//clickOnElement(getElement("XPATH", "//div[@id='work_shift_id_inputfileddiv']//span[@class='caret']//following-sibling::input", true));
+		//clickOnElement(getElement("XPATH", "//ul[contains(@class,'dropdown-content select-dropdown')]//span[text()='" + shiftValue + "']", true));
+		
+		System.out.println("STEP-Select Work Shift");
 		return this;
 	}
 
 	// TODO - Sun, 20 Sep 2015
 	public PIM_AddEmployeePage setEffectiveFrom(String date) {
+		date = date.split("\\.")[0];
 		driver.findElement(By.xpath("//label[text()='Effective From']/following-sibling::span//i")).click();
-		driver.findElement(
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement effectiveFromElement = wait.until(ExpectedConditions.visibilityOfElementLocated(
 				By.xpath("//input[@id='add_employee_effective_date']//following-sibling::span[1]//div[text()='" + date
-						+ "'][contains(@class,'--infocus')]"))
-				.click();
+						+ "'][contains(@class,'--infocus')]")));
+		effectiveFromElement.click();
 		return this;
 	}
 
@@ -99,6 +113,9 @@ public class PIM_AddEmployeePage extends PredefinedActions {
 	}
 
 	public PIM_AddEmployeePage setFTE(String FTEValue) {
+		if (FTEValue.equals("1.0"))
+			FTEValue = "1";
+
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement regionDropDown = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath("//label[text()='FTE']/preceding-sibling::div/input")));
@@ -127,6 +144,33 @@ public class PIM_AddEmployeePage extends PredefinedActions {
 	public PIM_AddEmployeePage clickOnSave() {
 		driver.findElement(By.xpath("//button[text()='Save']")).click();
 		return this;
+	}
+
+	public boolean isSuccessfullySaved() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		try {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='toast-message']")));
+			return true;
+		} catch (NoSuchElementException | StaleElementReferenceException e) {
+			return false;
+		}
+	}
+
+	public void waitTillSuccessfulMessageIsInvisible() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='toast-message']")));
+	}
+
+	public boolean isUsernameTitleDisplayed() {
+		// span[@id='pim.navbar.employeeName']
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		try {
+			wait.until(
+					ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='pim.navbar.employeeName']")));
+			return true;
+		} catch (TimeoutException te) {
+			return false;
+		}
 	}
 
 }
