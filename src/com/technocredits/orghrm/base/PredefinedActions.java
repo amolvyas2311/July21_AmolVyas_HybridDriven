@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import com.technocredits.orghrm.customExceptions.InvalidSelectorExpection;
+
 public class PredefinedActions {
 
 	protected static WebDriver driver;
@@ -34,7 +36,7 @@ public class PredefinedActions {
 
 	protected WebElement getElement(String locatorType, String locatorValue, boolean isWaitRequired) {
 		WebElement element = null;
-		switch (locatorType) {
+		switch (locatorType.toUpperCase()) {
 		case "XPATH":
 			if (isWaitRequired)
 				element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatorValue)));
@@ -47,8 +49,39 @@ public class PredefinedActions {
 			else
 				element = driver.findElement(By.id(locatorValue));
 			break;
+		case "CLASSNAME":
+			if (isWaitRequired)
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(locatorValue)));
+			else
+				element = driver.findElement(By.className(locatorValue));
+		case "CSSSELECTOR":
+			if (isWaitRequired)
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locatorValue)));
+			else
+				element = driver.findElement(By.cssSelector(locatorValue));
+		case "NAME":
+			if (isWaitRequired)
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(locatorValue)));
+			else
+				element = driver.findElement(By.name(locatorValue));
+		case "TAGNAME":
+			if (isWaitRequired)
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName(locatorValue)));
+			else
+				element = driver.findElement(By.tagName(locatorValue));
+		case "LINKTEXT":
+			if (isWaitRequired)
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(locatorValue)));
+			else
+				element = driver.findElement(By.linkText(locatorValue));
+		case "PARTIALLINKTEXT":
+			if (isWaitRequired)
+				element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText(locatorValue)));
+			else
+				element = driver.findElement(By.partialLinkText(locatorValue));
 		default:
-			System.out.println("Locator type is not valid");
+			throw new InvalidSelectorExpection(
+					"User Should Select values from XPATH, CSSSELECTOR, ID, NAME,TAGNAME, LINKTEXT, PARTIALLINKTEXT,CLASSNAME,TAGNAME");
 		}
 		return element;
 	}
